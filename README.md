@@ -72,5 +72,5 @@ The second line of code within the function should immediately return if the e
 Log the content of the <a> to verify the handler is working.
 2. Next, the event listener should set the CSS top property of subMenuEl to 0.
 3. Remove the active class from each <a> element in topMenuLinks.
-4. Update the contents of mainEl, within an <h1>, to the contents of the <a> element clicked within subMenuEl.
+4. Update the contents of mainEl, within an (<h1>), to the contents of the <a> element clicked within subMenuEl.
 5. If the ABOUT link is clicked, an <h1>About</h1> should be displayed.
