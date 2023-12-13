@@ -68,9 +68,9 @@ Once you have created your helper function, include it in the event listener wit
 The menu is almost complete! Now, we need to add interactions to the submenu items themselves:
 1. Attach a delegated 'click' event listener to subMenuEl.
 The first line of code of the event listener function should call the event object's preventDefault() method.
-The second line of code within the function should immediately return if the element clicked was not an <a> element.
-Log the content of the <a> to verify the handler is working.
+The second line of code within the function should immediately return if the element clicked was not an a tag element.
+Log the content of the a tag to verify the handler is working.
 2. Next, the event listener should set the CSS top property of subMenuEl to 0.
-3. Remove the active class from each <a> element in topMenuLinks.
-4. Update the contents of mainEl, within an (<h1>), to the contents of the <a> element clicked within subMenuEl.
-5. If the ABOUT link is clicked, an <h1>About</h1> should be displayed.
+3. Remove the active class from each a tag element in topMenuLinks.
+4. Update the contents of mainEl, within an h1 tag, to the contents of the a tag element clicked within subMenuEl.
+5. If the ABOUT link is clicked, an h1 tag About h1 tag should be displayed.
