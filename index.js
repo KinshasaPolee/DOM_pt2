@@ -43,6 +43,18 @@ if(topMenuEl) {
     console.error('Element with id "topMenuEl" not found.');
 }
 
+let topMenuLinks = document.querySelectorAll('a');
+
+topMenuEl.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    if(event.target.tagName === 'a') {
+console.log(event.target.textContent);
+    } else {
+        return;
+    }
+});
+
 let subMenuEl = document.getElementById('sub-menu');
 if(subMenuEl) {
     subMenuEl.style.height = '100%';
