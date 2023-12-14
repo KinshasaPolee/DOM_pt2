@@ -43,17 +43,18 @@ nav a {
 
 #mainEl {
     background-color: var(--main-bg);
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 
 header,
 #top-menu {
-    position: relative;
+        position: relative;
 }
 
 #top-menu {
+    background-color: var(--top-menu-bg);
     z-index: 20;
 }
 

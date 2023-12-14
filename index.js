@@ -1,4 +1,8 @@
-// Menu Links
+let mainEl = document.querySelector('main');
+let topMenuEl = document.getElementById('top-menu');
+let subMenuEl = document.getElementById('sub-menu');
+console.log(mainEl);
+
 var menuLinks = [
     { text: 'about', href: '/about' },
     {
@@ -24,23 +28,23 @@ var menuLinks = [
 ];
 
 for (var link of menuLinks) {
-    console.log('Link Text:', link.text);
-    console.log('Link Href:', link.href);
+    let newElt = document.createElement('a');
+    newElt.setAttribute('href', link.href);
+    newElt.textContent = link.text;
+    topMenuEl.appendChild(newElt);
 }
-
-let newElt = document.createElement('a');
-newElt.setAttribute('Link Href:', 'link.href');
-newElt.setAttribute('Link Text:', 'link.text');
-document.topMenuEl.appendChild(newElt);
 // End of Menu Links
-let main = document.getElementById('mainEL');
-if (main) {
-    main.classList.add('flex-ctr');
+if (mainEl) {
+    // new code from DOM pt1
+    var mainBackgroundColor = getComputedStyle(document. documentElement).getPropertyValue('--main-bg');
+    mainEl.style.backgroundColor = mainBackgroundColor;
+    mainEl.innerHTML = '<h1>DOM Manipulation</h1>';
+    // end of new code
+    mainEl.classList.add('flex-ctr');
 } else {
-    console.error('Element with id "mainEl" not found.');
+    console.error('Element with id "main" not found.');
 }
 
-let topMenuEl = document.getElementById('top-menu');
 if (topMenuEl) {
     topMenuEl.style.height = '100%';
     topMenuEl.classList.add('flex-around');
@@ -49,7 +53,6 @@ if (topMenuEl) {
     console.error('Element with id "topMenuEl" not found.');
 }
 // sub Menu
-let subMenuEl = document.getElementById('sub-menu');
 if (subMenuEl) {
     subMenuEl.style.height = '100%';
     subMenuEl.classList.add('flex-around');
@@ -60,7 +63,6 @@ if (subMenuEl) {
     console.error('Element with id "subMenuEl" not found.');
 }
 
-// let topMenuLinks = document.querySelectorAll('a');
 function buildSubmenu(subLinks) {
     subMenuEl.innerHTML = '';
     subLinks.forEach(linkObject => {
