@@ -31,3 +31,12 @@ if(topMenuEl) {
 } else {
     console.error('Element with id "topMenuEl" not found.');
 }
+
+let subMenuEl = document.getElementById('sub-menu');
+if(subMenuEl) {
+    subMenuEl.style.height = '100%';
+    subMenuEl.classList.add('flex-around');
+    var backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--sub-menu-bg').trim();
+} else {
+    console.error('Element with id "subMenuEl" not found.');
+}
