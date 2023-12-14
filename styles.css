@@ -43,9 +43,6 @@ nav a {
 
 #mainEl {
     background-color: var(--main-bg);
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
 
 header,

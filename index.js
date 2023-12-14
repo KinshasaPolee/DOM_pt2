@@ -1,7 +1,6 @@
 let mainEl = document.querySelector('main');
 let topMenuEl = document.getElementById('top-menu');
 let subMenuEl = document.getElementById('sub-menu');
-console.log(mainEl);
 
 var menuLinks = [
     { text: 'about', href: '/about' },
@@ -33,13 +32,11 @@ for (var link of menuLinks) {
     newElt.textContent = link.text;
     topMenuEl.appendChild(newElt);
 }
-// End of Menu Links
+
 if (mainEl) {
-    // new code from DOM pt1
     var mainBackgroundColor = getComputedStyle(document. documentElement).getPropertyValue('--main-bg');
     mainEl.style.backgroundColor = mainBackgroundColor;
     mainEl.innerHTML = '<h1>DOM Manipulation</h1>';
-    // end of new code
     mainEl.classList.add('flex-ctr');
 } else {
     console.error('Element with id "main" not found.');
@@ -48,17 +45,19 @@ if (mainEl) {
 if (topMenuEl) {
     topMenuEl.style.height = '100%';
     topMenuEl.classList.add('flex-around');
-    var backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--top-menu-bg').trim();
+    var topBackgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--top-menu-bg').trim();
 } else {
     console.error('Element with id "topMenuEl" not found.');
 }
 // sub Menu
+// stuck at Pt.3 creating submenu
 if (subMenuEl) {
     subMenuEl.style.height = '100%';
-    subMenuEl.classList.add('flex-around');
     subMenuEl.style.position = 'absolute';
     subMenuEl.style.top = '0';
-    var backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--sub-menu-bg').trim();
+     // subMenuEl.classList.add('flex-around');
+    var subBackgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--sub-menu-bg').trim();
+
 } else {
     console.error('Element with id "subMenuEl" not found.');
 }
