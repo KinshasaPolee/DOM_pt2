@@ -43,15 +43,31 @@ if(topMenuEl) {
     console.error('Element with id "topMenuEl" not found.');
 }
 
-let topMenuLinks = document.querySelectorAll('a');
+// let topMenuLinks = document.querySelectorAll('a');
 
 topMenuEl.addEventListener('click', function(event) {
     event.preventDefault();
 
     if(event.target.tagName === 'a') {
-console.log(event.target.textContent);
-    } else {
-        return;
+        const clickedLink = event.target;
+    console.log(event.target.textContent);
+
+        const isAlreadyActive = clickedLink.classList.contains('active');
+
+        const topMenuLinks = topMenuEl.querySelectorAll('a');
+        topMenuLinks.forEach(link => {
+            if(link !== clickedLink) {
+                link.classList.remove('active');
+            }
+        });
+
+        if(!isAlreadyActive) {
+            clickedLink.classList.add('active');
+        } else {
+            clickedLink.classList.remove('active');
+        }
+        // } else {
+        // return;
     }
 });
 
