@@ -47,7 +47,7 @@ nav a {
 
 header,
 #top-menu {
-        position: relative;
+    position: relative;
 }
 
 #top-menu {
@@ -59,6 +59,7 @@ header,
     width: 100%;
     z-index: 10;
     transition: top 0.5s ease-out;
+    background-color: var(--sub-menu-bg);
 }
 
 #sub-menu a:hover {
