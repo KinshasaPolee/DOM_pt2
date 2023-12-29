@@ -35,29 +35,29 @@ for (var link of menuLinks) {
 let linksArray = [...document.querySelectorAll('a')]
 let subLinks
 linksArray.forEach(link => {
-    link.addEventListener('click', function(e) {
-    for (let i = 0; i < menuLinks.length; i++) {
-        if (e.target.textContent === menuLinks[i].text) {
-            subLinks = menuLinks[i].subLinks
-            break;
+    link.addEventListener('click', function (e) {
+        for (let i = 0; i < menuLinks.length; i++) {
+            if (e.target.textContent === menuLinks[i].text) {
+                subLinks = menuLinks[i].subLinks
+                break;
+            }
         }
-    }
-    if (subLinks) {
-        subMenuEl.style.top = '100%';
-        subMenuEl.innerHTML = ''
-        subLinks.forEach(link => {
-            let aEl = document.createElement('a')
-            aEl.href = link.href
-            aEl.textContent = link.text
-            subMenuEl.append(aEl)
-            subMenuEl.classList.add('flex-around');
-        })
-    } else {
-        subMenuEl.style.top = '0';
-        
-    }
+        if (subLinks) {
+            subMenuEl.style.top = '100%';
+            subMenuEl.innerHTML = ''
+            subLinks.forEach(link => {
+                let aEl = document.createElement('a')
+                aEl.href = link.href
+                aEl.textContent = link.text
+                subMenuEl.append(aEl)
+                subMenuEl.classList.add('flex-around');
+            })
+        } else {
+            subMenuEl.style.top = '0';
+
+        }
     })
-    })
+})
 
 if (mainEl) {
     var mainBackgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--main-bg');
@@ -103,7 +103,7 @@ topMenuEl.addEventListener('click', function (event) {
     event.preventDefault();
 
     if (event.target.tagName === 'a') {
-        
+
         const clickedLink = event.target;
         const linkObject = getLinkObject(clickedLink);
 
@@ -137,16 +137,16 @@ subMenuEl.addEventListener('click', function (event) {
     if (event.target.tagName === 'a') {
         return;
     }
-        console.log(event.target.textContent);
-        subMenuEl.style.top = '0';
+    console.log(event.target.textContent);
+    subMenuEl.style.top = '0';
 
-        topMenuLinks.forEach(function(link) {
-            link.classList.remove('active');
-        });
-
-        mainEl.innerHTML = '<h1>' + event.target.textContent + '</h1>';
-        if (event.target.textContent === 'About') {
-            mainEl.innerHTML.subMenuEl = '<h1>About</h1>';
-        }
-        console.log(event.target.tagName)
+    topMenuLinks.forEach(function (link) {
+        link.classList.remove('active');
     });
+
+    mainEl.innerHTML = '<h1>' + event.target.textContent + '</h1>';
+    if (event.target.textContent === 'About') {
+        mainEl.innerHTML.subMenuEl = '<h1>About</h1>';
+    }
+    console.log(event.target.tagName)
+});
